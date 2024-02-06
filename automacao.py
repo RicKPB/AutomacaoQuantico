@@ -1,57 +1,3 @@
-"""
-PASSO A PASSO PARA FAZER O UPDATE NOS ARQUIVOS AGI
-
-Passo 1 - Acessar o sistema
-Passo 2 - Pegar o nome do arquivo que sera feito o update
-Passo 3 - Pesquisar no sistema o nome do arquivo
-Passo 4 - Realizar o delete
-Passo 5 - Acessar a aba para subir os arquivos que foram deletado
-
-
-PONTO CHAVES
-- Nome dos arquivos teram que ser feito uma analise e correcao
-    - Passar todos os nomes para uma planilha
-    - Pegar definir quais sao os nomes padroes de arquivos
-    - Fazer testes para tipos de arquivos
-
-ESCRITA DE TIPO DE ARQUIVO
-    - ESCRITO NO ARQUIVO | TIPO DE ARQUIVO
-    - SAUDE E SEGURANCA  | DOCUMENTOS SAUDE E SEGURANCA DO TRABALHO
-    - MENSAL             | DOCUMENTOS MENSAIS
-    - ADMISSIONAL        | DOCUMENTOS ADMISSIONAIS
-    - PESSOAIS           | DOCUMENTOS PESSOAIS
-    - DEMISSIONAL        | DOCUMENTOS DEMISSIONAIS
-    - TREINAMENTOS E CERTIFICADOS | TREINAMENTOS E CERTIFICADOS
-
-    CASO FUNCIONARIO TENHAS MAIS DE UMA MATRICULA
-
-    EXEMPLO:
-        - NOME FUNCIONARIO- TIPO DO ARQUIVO - TIPO DO DOCUMENTO.PDF
-
-CASO DE GERENTES
-    ESCRITA PARA ARQUIVOS
-        - GERENTE NOME DO GERENTE - TIPO DO ARQUIVO - TIPO DE DOCUMENTO.PDF
-
-    SISTEMA PEGA E FAZ COM QUE SEJA SELECIONADO O DEPARTAMENTO DE GERENCIA E APOS ISSO ELE EXCLUI A PARTE DO GERENTES
-    FAZENDO A PESQUISA SOMENTO DO NOME DO GERENTE
-
-NOMES COM PROBLEMAS
-    - HUGO HENRIQUE LOPES DA SILVA - 70002 - 3233
-    - JIDEONE SANTOS DA SILVA - JIDEONE SANTOS DA MOTA SEGGER
-
-UPDATE PARA ANALISAR
-    - LEITURA DE PDFS
-    - AGILIDADE MAIOR COM O TEMPO DE UPLOAD
-    - INCLUSÃO DE ARQUIVOS DIRETO NO ARQUIVO PRINCIPAL
-    - ANALISE DE DADOS SOBRE O NOME DO FUNCIONARIO E O TIPO DE ARQUIVO, AONDE SE CASO O
- FUNCIONARIO REPITA O MESMO DOCUMENTO ELE NAO REPITA NA PLANILHA. (PROX ETAPA)
-
-ANALISE FERNANDO
-    - FERNANDO PASSOU QUE ACHA IMPORTANTE UTILIZARMOS O CTRL + C E O CTRL + V PARA ESCREVER O NOME DOS FUNCIONARIOS
-PEGANDO O NOME DIRETAMENTE DO SERVIDO DA AGI
-     - PADRONIZAR A ESCRITA DOS TIPOS DE ARQUIVO.
-"""
-
 import pandas as pd
 import time
 import pyautogui as pyag
@@ -61,7 +7,7 @@ from arquivo import Arquivo
 
 # Passo 1 - Acessar o sistema
 
-sistema = "https://sistema.qdoc.com.br/"  # Site do sistema;
+sistema = "SISTEMA_EMPRESA"  # Site do sistema;
 pyag.PAUSE = 2  # Tempo de espera para realizar cada passo da automação;
 
 pyag.press('win')  # Pressionando botão win do teclado;
@@ -88,7 +34,7 @@ time.sleep(20)  # Tempo de espera para carregar o sistema
 pyag.click(x=356, y=215)
 pyag.click(x=353, y=306)
 pyag.click(x=223, y=390)
-pyag.write('AGI')
+pyag.write('EMPRESA')
 pyag.press('enter')
 
 # PAGINA DE CADASTRAR
@@ -97,11 +43,11 @@ pyag.rightClick(x=362, y=271)
 pyag.click(x=402, y=295)
 pyag.click(x=383, y=15)
 pyag.click(x=292, y=418)
-pyag.write('AGI')
+pyag.write('EMPRESA')
 pyag.press('enter')
 
 # LEITURA DA PLANILHA
-planilha = pd.read_excel('UpdateAGI.xlsx')
+planilha = pd.read_excel('Update.xlsx')
 
 for linha in planilha.index:
     # LEITURA DAS COLUNAS DA PLANILHA
@@ -112,8 +58,8 @@ for linha in planilha.index:
     pyag.click(x=172, y=9)
 
     if 'GERENTE' in nome_funcionario:
-        nome_funcionario = nome_funcionario.replace('GERENTE',
-                                                    '').strip()  # FAZENDO COM QUE APAGUE A PALAVRA GERENTE SE CASO HOUVER NO NOME
+        nome_funcionario = nome_funcionario.replace('GERENTE','').strip()  # FAZENDO COM QUE APAGUE A PALAVRA GERENTE SE CASO HOUVER NO NOME
+
         pyag.click(x=785, y=383)  # CONTEUDO
         pyag.write('GERENCIA')  # ESCRITA CONTEUDO
 
