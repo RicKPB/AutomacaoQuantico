@@ -21,7 +21,7 @@ Esta automação como devemos chama-la, foi desenvolvida com o intuito de ajudar
 - Update para analisar
 - Análise Fernando (responsável pelo setor da empresa)
 
-# ATUALIZAÇÕES EM ANALISE 
+## ATUALIZAÇÕES EM ANALISE 
 
 - LEITURA DE PDFS
 - AGILIDADE MAIOR COM O TEMPO DE UPLOAD
