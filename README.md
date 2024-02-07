@@ -20,3 +20,10 @@ Esta automação como devemos chama-la, foi desenvolvida com o intuito de ajudar
 - Caso de gerentes
 - Update para analisar
 - Análise Fernando (responsável pelo setor da empresa)
+
+# ATUALIZAÇÕES EM ANALISE 
+
+- LEITURA DE PDFS
+- AGILIDADE MAIOR COM O TEMPO DE UPLOAD
+- INCLUSÃO DE ARQUIVOS DIRETO NO ARQUIVO PRINCIPAL
+- ANALISE DE DADOS SOBRE O NOME DO FUNCIONARIO E O TIPO DE ARQUIVO, AONDE SE CASO O FUNCIONARIO REPITA O MESMO DOCUMENTO ELE NAO REPITA NA PLANILHA. (PROX ETAPA)
